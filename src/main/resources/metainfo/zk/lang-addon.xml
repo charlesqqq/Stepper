@@ -1,0 +1,30 @@
+<language-addon>
+    <addon-name>Stepper</addon-name>
+	<language-name>xul/html</language-name>
+	<component>
+		<component-name>stepper</component-name> <!-- required -->
+		<component-class>prototype.Stepper</component-class> <!-- required -->
+		<widget-class>prototype.Stepper</widget-class> <!-- required -->
+		<mold>
+			<mold-name>default</mold-name>
+			<mold-uri>mold/stepper.js</mold-uri>
+			<css-uri>css/stepper.css.dsp</css-uri>
+		</mold>
+		<annotation>
+			<annotation-name>ZKBIND</annotation-name>
+			<attribute>
+				<attribute-name>RENDERER</attribute-name>
+				<attribute-value>stepRenderer:prototype.BindStepRenderer</attribute-value>
+			</attribute>
+		</annotation>
+	</component>
+	<component>
+		<component-name>step</component-name> <!-- required -->
+		<component-class>prototype.Step</component-class> <!-- required -->
+		<widget-class>prototype.Step</widget-class> <!-- required -->
+		<mold>
+			<mold-name>default</mold-name>
+			<mold-uri>mold/step.js</mold-uri>
+		</mold>
+	</component>
+</language-addon>

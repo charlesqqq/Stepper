@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+testVM.zul
+
+		Purpose:
+                
+		Description:
+                
+		History:
+				Thu Mar 07 09:57:53 CST 2019, Created by charlesqiu
+
+Copyright (C) 2019 Potix Corporation. All Rights Reserved.
+
+-->
+<zk>
+	<div viewModel="@id('vm') @init('test.ctrl.TestVM')">
+		<stepper model="@load(vm.model)" vertical="@load(vm.vertical)">
+			<template name="model">
+				<step title="@load(each.title)" description="@load(each.description)"
+					  complete="@load(each.complete)" error="@load(each.error)"
+					  onComplete="@command('onComplete', step=self)">
+					<vlayout>
+						<label value="@load(each.content)"/>
+						<textbox value="@save(each.title)" placeholder="change title"/>
+						<checkbox checked="@save(each.complete)" label="complete"/>
+						<checkbox checked="@save(each.error)" label="error"/>
+					</vlayout>
+				</step>
+			</template>
+		</stepper>
+		<button label="back" onClick="@command('back')"/>
+		<button label="next" onClick="@command('next')"/>
+		<button label="vertical" onClick="@command('vertical')"/>
+		<button label="changeAllTitle" onClick="@command('changeAllTitle')"/>
+	</div>
+</zk>
